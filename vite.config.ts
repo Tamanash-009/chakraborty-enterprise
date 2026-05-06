@@ -12,22 +12,26 @@ export default defineConfig(({mode}) => {
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg', 'logo.png'],
         manifest: {
           name: 'Chakraborty Enterprise',
-          short_name: 'CE Digital',
+          short_name: 'Chakraborty Enterprise',
           description: 'CSC & Digital Service Centre',
-          theme_color: '#0891b2',
+          theme_color: '#ffffff',
+          background_color: '#ffffff',
+          display: 'standalone',
           icons: [
             {
               src: 'pwa-192x192.png',
               sizes: '192x192',
-              type: 'image/png'
+              type: 'image/png',
+              purpose: 'any maskable'
             },
             {
               src: 'pwa-512x512.png',
               sizes: '512x512',
-              type: 'image/png'
+              type: 'image/png',
+              purpose: 'any maskable'
             }
           ]
         }
