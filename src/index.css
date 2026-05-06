@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-primary: 8 145 178; /* #0891b2 - Cyan 600 */
+  --color-primary-dark: 14 116 144; /* #0e7490 - Cyan 700 */
+  --color-background: 248 250 252; /* #f8fafc */
+  --color-surface: 255 255 255; /* #ffffff */
+  --color-border: 226 232 240; /* #e2e8f0 */
+  --color-text-main: 31 41 55; /* #1f2937 */
+  --color-text-muted: 107 114 128; /* #6b7280 */
+}
+
+.dark {
+  --color-background: 15 23 42; /* #0f172a - Slate 900 */
+  --color-surface: 30 41 59; /* #1e293b - Slate 800 */
+  --color-border: 51 65 85; /* #334155 - Slate 700 */
+  --color-text-main: 241 245 249; /* #f1f4f9 - Slate 100 */
+  --color-text-muted: 148 163 184; /* #94a3b8 - Slate 400 */
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: rgb(var(--color-primary));
+  --color-primary-dark: rgb(var(--color-primary-dark));
+  --color-surface: rgb(var(--color-surface));
+  --color-background: rgb(var(--color-background));
+  --color-border: rgb(var(--color-border));
+  --color-text-main: rgb(var(--color-text-main));
+  --color-text-muted: rgb(var(--color-text-muted));
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    scrollbar-width: none;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    @apply bg-background text-text-main font-sans transition-colors duration-300;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.optimize-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
+}
+
+.bento-card {
+  @apply bg-surface rounded-[2.5rem] p-8 border border-border shadow-sm transition-all duration-300;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.bento-card-hero {
+  @apply bg-linear-to-br from-[#0891b2] to-[#0e7490] text-white border-none shadow-lg shadow-cyan-900/10 rounded-[2.5rem];
+}

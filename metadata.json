@@ -1,0 +1,12 @@
+{
+  "name": "Chakraborty Enterprise",
+  "description": "A modern, mobile-first CSC & Digital Service Centre platform providing banking, government, and digital services with easy access to contact and location information.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Digital Services",
+    "Banking & Finance",
+    "Government Certificates"
+  ]
+}

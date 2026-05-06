@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chakraborty-enterprise.run.app/sitemap.xml
