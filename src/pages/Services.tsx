@@ -79,6 +79,10 @@ export default function Services() {
     setTimeout(() => {
       setHighlightedCategory(null);
     }, 2000);
+    
+    import('../utils/analytics').then(({ trackServiceClick }) => {
+      trackServiceClick('Category Scrolled', id);
+    });
   };
 
   useEffect(() => {
@@ -87,6 +91,17 @@ export default function Services() {
     }, 800);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (searchQuery.trim().length > 2) {
+      const timer = setTimeout(() => {
+        import('../utils/analytics').then(({ trackSearch }) => {
+          trackSearch(searchQuery);
+        });
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [searchQuery]);
 
   useEffect(() => {
     if (!loading && location.hash) {
@@ -214,6 +229,9 @@ export default function Services() {
 
     if (Object.keys(errors).length > 0) {
       setBookingErrors(errors);
+      import('../utils/analytics').then(({ trackFormSubmission }) => {
+        trackFormSubmission('booking_form', false);
+      });
       return;
     }
 
@@ -251,10 +269,16 @@ export default function Services() {
     setTimeout(() => {
       setIsBookingSubmitting(false);
       setBookingStep('success');
+      import('../utils/analytics').then(({ trackFormSubmission }) => {
+        trackFormSubmission('booking_form', true);
+      });
     }, 1500);
   };
 
   const openBookingModal = (serviceName: string, description: string = '') => {
+    import('../utils/analytics').then(({ trackServiceClick }) => {
+      trackServiceClick(serviceName || 'General', 'Booking Modal Opened');
+    });
     setBookingData({
       name: '',
       phone: '',
@@ -326,6 +350,27 @@ export default function Services() {
         title="Services" 
         description="Comprehensive Digital Services for citizens across West Bengal. Aadhaar, PAN, Banking, Insurance, Travel, Loans, and Online Government Schemes. Fast and secure processing."
         keywords="CSC services, Aadhaar services, PAN card services, Ayushman Bharat, ABHA card, PM Kisan, Annapurna Bhandar, West Bengal Government Schemes, Travel booking, Insurance services, Loan services, Driving license services, Online government services, Banking assistance"
+        schemas={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Services - Chakraborty Enterprise",
+            "url": "https://chakraborty-enterprise.vercel.app/services"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Digital Government and Banking Services",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Chakraborty Enterprise"
+            },
+            "areaServed": {
+              "@type": "State",
+              "name": "West Bengal"
+            }
+          }
+        ]}
       />
       <motion.div 
         variants={containerVariants}
@@ -658,7 +703,12 @@ export default function Services() {
                           <h3 className="text-sm font-bold text-text-main leading-tight group-hover/item:text-primary transition-colors italic">{sub.name}</h3>
                         </div>
                         <button 
-                          onClick={() => setSelectedSubService(sub)}
+                          onClick={() => {
+                            setSelectedSubService(sub);
+                            import('../utils/analytics').then(({ trackServiceClick }) => {
+                              trackServiceClick(sub.name, category.title);
+                            });
+                          }}
                           className="text-primary hover:bg-primary/20 p-2 rounded-full transition-colors flex-shrink-0"
                           title="View Details"
                           aria-label={`View details for ${sub.name}`}

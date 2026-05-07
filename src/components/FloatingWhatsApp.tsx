@@ -48,6 +48,11 @@ const FloatingWhatsApp = () => {
                   href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=${encodeURIComponent(action.text)}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    import('../utils/analytics').then(({ trackWhatsAppClick }) => {
+                      trackWhatsAppClick('floating_button');
+                    });
+                  }}
                   className="flex items-center gap-3 p-2 hover:bg-primary/5 rounded-xl transition-colors group"
                 >
                   <action.icon size={14} className="text-text-muted group-hover:text-primary transition-colors" />

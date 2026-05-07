@@ -44,6 +44,28 @@ export default function Home() {
         title="Home" 
         description="Empowering citizens across West Bengal from our Digital Service Center in Chhoto Jagulia. Expertise in Aadhaar updates, PAN cards, banking, and government scholarship applications."
         keywords="Aadhaar Update Chhoto Jagulia, PAN Card Barasat, Banking Service North 24 Parganas, CSC Center Chhoto Jagulia"
+        schemas={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Chakraborty Enterprise",
+            "url": "https://chakraborty-enterprise.vercel.app/"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Chakraborty Enterprise",
+            "url": "https://chakraborty-enterprise.vercel.app/",
+            "logo": "https://chakraborty-enterprise.vercel.app/logo-large.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": CONTACT_INFO.normalizedPhone,
+              "contactType": "customer service",
+              "areaServed": "IN",
+              "availableLanguage": ["English", "Bengali", "Hindi"]
+            }
+          }
+        ]}
       />
       <motion.div 
         variants={containerVariants}

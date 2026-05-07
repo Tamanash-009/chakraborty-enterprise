@@ -52,6 +52,7 @@ export default function ReviewMarquee() {
           {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
             <div 
               key={index}
+              aria-hidden={index >= TESTIMONIALS.length}
               className="flex-shrink-0 w-[350px] sm:w-[400px] bg-surface dark:bg-surface/30 backdrop-blur-xl border border-border/60 rounded-[2.5rem] p-8 hover:shadow-primary/5 hover:border-primary/20 transition-all group/card"
             >
               <div className="flex justify-between items-start mb-6">
@@ -72,6 +73,7 @@ export default function ReviewMarquee() {
                   <img 
                     src={testimonial.avatar} 
                     alt={testimonial.name}
+                    loading="lazy"
                     className="w-12 h-12 rounded-[1.25rem] bg-background object-cover border border-border/50"
                   />
                   <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-4 border-surface flex items-center justify-center">

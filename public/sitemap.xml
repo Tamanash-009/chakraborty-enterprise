@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://chakraborty-enterprise.run.app/</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://chakraborty-enterprise.vercel.app/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://chakraborty-enterprise.run.app/services</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://chakraborty-enterprise.vercel.app/services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://chakraborty-enterprise.vercel.app/about</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chakraborty-enterprise.run.app/contact</loc>
-    <lastmod>2026-05-05</lastmod>
-    <priority>0.5</priority>
+    <loc>https://chakraborty-enterprise.vercel.app/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -11,6 +11,7 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 import LoadingScreen from './components/LoadingScreen';
 import Home from './pages/Home';
 import { Privacy, Terms, Refund } from './pages/Legal';
+import GA4Tracker from './components/GA4Tracker';
 
 // Lazy load routes to drastically reduce initial JS bundle size
 const Services = React.lazy(() => import('./pages/Services'));
@@ -60,6 +61,7 @@ function CopyProtection() {
 export default function App() {
   return (
     <Router>
+      <GA4Tracker />
       <CopyProtection />
       <ScrollToTop />
       <PWAInstall />

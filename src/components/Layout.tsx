@@ -196,7 +196,12 @@ export default function Layout({ children }: LayoutProps) {
                   href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=${encodeURIComponent('Hi, I need assistance with a digital service.')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={toggleMenu}
+                  onClick={() => {
+                    toggleMenu();
+                    import('../utils/analytics').then(({ trackWhatsAppClick }) => {
+                      trackWhatsAppClick('mobile_menu');
+                    });
+                  }}
                   className="flex items-center justify-center gap-3 p-6 bg-[#25D366] text-white rounded-[2rem] font-black uppercase italic tracking-tighter text-xl text-center shadow-2xl shadow-green-500/20 active:scale-95 transition-all"
                 >
                   <MessageSquare size={24} strokeWidth={3} /> Chat on WhatsApp
@@ -305,6 +310,11 @@ export default function Layout({ children }: LayoutProps) {
                 href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=${encodeURIComponent('Hi, I have a query regarding your services.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  import('../utils/analytics').then(({ trackWhatsAppClick }) => {
+                    trackWhatsAppClick('footer');
+                  });
+                }}
                 className="flex items-center gap-4 group"
                 aria-label="Chat on WhatsApp"
               >

@@ -130,6 +130,9 @@ export default function Contact() {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      import('../utils/analytics').then(({ trackFormSubmission }) => {
+        trackFormSubmission('contact_form', false);
+      });
       return;
     }
     
@@ -162,6 +165,9 @@ export default function Contact() {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
+      import('../utils/analytics').then(({ trackFormSubmission }) => {
+        trackFormSubmission('contact_form', true);
+      });
     }, 1500);
   };
 
@@ -173,6 +179,14 @@ export default function Contact() {
         title="Contact Us" 
         description="Get in touch with Chakraborty Enterprise. Serving citizens across West Bengal with digital services. Visit our center in Chhoto Jagulia or chat with us on WhatsApp."
         keywords="Contact Chakraborty Enterprise, Digital Center Location, Chhoto Jagulia CSC, Barasat digital work help"
+        schemas={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Chakraborty Enterprise",
+            "url": "https://chakraborty-enterprise.vercel.app/contact"
+          }
+        ]}
       />
       <motion.div 
         initial={{ opacity: 0 }}
@@ -284,6 +298,11 @@ export default function Contact() {
                 href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=${encodeURIComponent('Hi, I need help with a digital service enquiry.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  import('../utils/analytics').then(({ trackWhatsAppClick }) => {
+                    trackWhatsAppClick('contact_page');
+                  });
+                }}
                 className="flex items-center gap-4 group"
               >
                 <div className="p-4 bg-surface/5 rounded-[1.5rem] group-hover:bg-green-500 transition-colors">

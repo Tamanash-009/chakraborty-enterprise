@@ -4,6 +4,8 @@ import servicesData from './data/services.json';
 
 export const CONTACT_INFO = {
   phone: '+919932454652',
+  verifiedPhone: '99324 54652',
+  normalizedPhone: '+919932454652',
   whatsapp: '919830861042',
   email: 'tamanash.cr7@gmail.com',
   address: 'Chhoto Jagulia, North 24 Parganas, WB 743294',

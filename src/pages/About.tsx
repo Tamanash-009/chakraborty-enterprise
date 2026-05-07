@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 import { AboutSkeleton } from '../components/Skeletons';
+import SEO from '../components/SEO';
 
 const FAQS = [
   {
@@ -46,11 +47,37 @@ export default function About() {
   if (loading) return <AboutSkeleton />;
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="py-12 space-y-24 max-w-7xl mx-auto px-4"
-    >
+    <>
+      <SEO 
+        title="About Us"
+        description="Learn about Chakraborty Enterprise, an authorized Common Service Centre (CSC) in Chhoto Jagulia, West Bengal."
+        keywords="About Chakraborty Enterprise, CSC VLE Chhoto Jagulia, Digital India CSC, Duttapukur CSC Point"
+        schemas={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Chakraborty Enterprise",
+            "url": "https://chakraborty-enterprise.vercel.app/about"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": FAQS.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          }
+        ]}
+      />
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="py-12 space-y-24 max-w-7xl mx-auto px-4"
+      >
       {/* Hero Section */}
       <section className="text-center md:text-left space-y-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">
@@ -203,6 +230,7 @@ export default function About() {
           ))}
         </div>
       </section>
-    </motion.div>
+      </motion.div>
+    </>
   );
 }
