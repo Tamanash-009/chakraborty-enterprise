@@ -17,10 +17,11 @@ const FloatingWhatsApp = () => {
   return (
     <motion.div 
       drag
+      dragListener={!isOpen}
       dragMomentum={false}
       dragTransition={{ power: 0.2, timeConstant: 200 }}
-      whileTap={{ cursor: 'grabbing' }}
-      className="fixed bottom-24 right-6 z-[100] flex flex-col items-end sm:bottom-6 sm:right-6 cursor-grab"
+      whileTap={{ cursor: isOpen ? 'auto' : 'grabbing' }}
+      className={`fixed bottom-24 right-6 z-[100] flex flex-col items-end sm:bottom-6 sm:right-6 ${isOpen ? '' : 'cursor-grab'}`}
     >
       <AnimatePresence>
         {isOpen && (
@@ -58,14 +59,14 @@ const FloatingWhatsApp = () => {
         )}
       </AnimatePresence>
 
-      <button
-        onClick={() => setIsOpen(!isOpen)}
+      <motion.button
+        onTap={() => setIsOpen(!isOpen)}
         className="relative group flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg shadow-[#25D366]/30 hover:scale-110 active:scale-95 transition-all"
         aria-label="WhatsApp Us"
       >
         <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20 group-hover:opacity-40"></span>
         <MessageSquare size={24} />
-      </button>
+      </motion.button>
     </motion.div>
   );
 };
