@@ -3,16 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import PWAInstall from './components/PWAInstall';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import LoadingScreen from './components/LoadingScreen';
 import Home from './pages/Home';
-import Services from './pages/Services';
-import Contact from './pages/Contact';
-import About from './pages/About';
 import { Privacy, Terms, Refund } from './pages/Legal';
+
+// Lazy load routes to drastically reduce initial JS bundle size
+const Services = React.lazy(() => import('./pages/Services'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+const About = React.lazy(() => import('./pages/About'));
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -62,15 +65,17 @@ export default function App() {
       <PWAInstall />
       <FloatingWhatsApp />
       <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/refund" element={<Refund />} />
-        </Routes>
+        <Suspense fallback={<LoadingScreen />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/refund" element={<Refund />} />
+          </Routes>
+        </Suspense>
       </Layout>
     </Router>
   );
