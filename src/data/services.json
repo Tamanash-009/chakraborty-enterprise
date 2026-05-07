@@ -1,0 +1,246 @@
+[
+  {
+    "id": "government",
+    "title": "Government Services",
+    "icon": "FileCheck",
+    "subServices": [
+      {
+        "name": "Pension & Social Security Services",
+        "icon": "ShieldCheck",
+        "description": "Comprehensive pension solutions, retirement savings, and social security welfare programs.",
+        "items": [
+          {
+            "name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+            "description": "Pension support for eligible senior citizens.",
+            "badge": "Govt Welfare"
+          },
+          {
+            "name": "National Social Assistance Programme (NSAP)",
+            "description": "Umbrella support scheme for pension and welfare benefits.",
+            "badge": "Govt Welfare"
+          },
+          {
+            "name": "Atal Pension Yojana (APY)",
+            "description": "Pension scheme for unorganised sector workers.",
+            "badge": "Govt Welfare"
+          },
+          {
+            "name": "National Pension System (NPS)",
+            "description": "Long-term retirement savings and pension system.",
+            "badge": "Retirement"
+          },
+          {
+            "name": "Pradhan Mantri Vaya Vandana Yojana (PMVVY)",
+            "description": "Senior citizen pension plan with guaranteed returns.",
+            "badge": "Senior Citizens"
+          },
+          {
+            "name": "Senior Citizens Savings Scheme (SCSS)",
+            "description": "Government-backed savings scheme with regular income benefits.",
+            "badge": "Savings"
+          },
+          {
+            "name": "Varishtha Pension Bima Yojana (VPBY)",
+            "description": "LIC-backed pension scheme for senior citizens.",
+            "badge": "Insurance"
+          },
+          {
+            "name": "Employees’ Provident Fund (EPF)",
+            "description": "Retirement pension and savings support for salaried employees.",
+            "badge": "Employee"
+          },
+          {
+            "name": "Employees’ Pension Scheme (EPS)",
+            "description": "Pension scheme for eligible EPFO members.",
+            "badge": "Employee"
+          },
+          {
+            "name": "Immediate & Deferred Annuity Plans",
+            "description": "Regular pension income through insurance-backed annuity plans.",
+            "badge": "Annuity"
+          },
+          {
+            "name": "Public Provident Fund (PPF)",
+            "description": "Long-term savings plans designed for retirement income support.",
+            "badge": "Savings"
+          }
+        ]
+      },
+      {
+        "name": "Aadhaar Services",
+        "icon": "Fingerprint",
+        "items": [
+          { "name": "Aadhaar Enrollment", "description": "New Aadhaar card registration." },
+          { "name": "Aadhaar Correction", "description": "Name, Address, or DOB updates." },
+          { "name": "Mobile Link & PVC", "description": "Link mobile to Aadhaar or order PVC card." }
+        ]
+      },
+      {
+        "name": "PAN & Identity Cards",
+        "icon": "CreditCard",
+        "items": [
+          { "name": "PAN Card Application", "description": "Apply for a new individual or business PAN." },
+          { "name": "Voter ID Services", "description": "Registration, correction, and Aadhaar linking." },
+          { "name": "E-Shram & Labour Cards", "description": "Registration for unorganized sector workers." }
+        ]
+      },
+      {
+        "name": "Ayushman Bharat & Health",
+        "icon": "HeartPulse",
+        "items": [
+          { "name": "Ayushman Bharat Card", "description": "Registration and KYC for health coverage." },
+          { "name": "ABHA Health Card", "description": "Create digital health IDs instantly." },
+          { "name": "Swasthya Sathi", "description": "West Bengal health scheme enrollment." }
+        ]
+      },
+      {
+        "name": "Agriculture & Farmers",
+        "icon": "Sprout",
+        "items": [
+          { "name": "PM Kisan Yojana", "description": "Registration and KYC for farmer income support." },
+          { "name": "Krishak Bandhu", "description": "West Bengal state scheme for farmers." }
+        ]
+      },
+      {
+        "name": "Welfare Schemes & Cards",
+        "icon": "FileSearch",
+        "items": [
+          { "name": "Lakshmir Bhandar", "description": "Application and status check assistance." },
+          { "name": "Kanyashree & Rupashree", "description": "Assistance for girl child and marriage schemes." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "banking",
+    "title": "Banking & Financial Services",
+    "icon": "Landmark",
+    "subServices": [
+      {
+        "name": "Bank Accounts",
+        "icon": "Landmark",
+        "items": [
+          { "name": "Savings & Current Accounts", "description": "Instant account opening with leading banks." },
+          { "name": "FD & RD Accounts", "description": "Secure fixed and recurring deposits." }
+        ]
+      },
+      {
+        "name": "Loan Services",
+        "icon": "Coins",
+        "items": [
+          { "name": "Personal Loan", "description": "Instant loans for salaried/self-employed." },
+          { "name": "Business & MSME Loan", "description": "Working capital and project loans." },
+          { "name": "Home & Vehicle Loan", "description": "Financing for property and vehicles." }
+        ]
+      },
+      {
+        "name": "AEPS & Micro ATM",
+        "icon": "Wallet",
+        "items": [
+          { "name": "Cash Withdrawal", "description": "Aadhaar-enabled instant cash withdrawal." },
+          { "name": "Balance Enquiry", "description": "Check bank balance without visiting the branch." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "insurance",
+    "title": "Insurance Services",
+    "icon": "Shield",
+    "subServices": [
+      {
+        "name": "Life & Health",
+        "icon": "HeartPulse",
+        "items": [
+          { "name": "Life Insurance", "description": "Term insurance and whole life plans." },
+          { "name": "Health Mediclaim", "description": "Family floater and individual health cover." }
+        ]
+      },
+      {
+        "name": "Motor & Asset",
+        "icon": "Car",
+        "items": [
+          { "name": "Bike & Car Insurance", "description": "Instant 1st party and 3rd party cover." },
+          { "name": "Shop & Business Insurance", "description": "Fire and liability insurance for businesses." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "travel",
+    "title": "Travel Booking",
+    "icon": "Plane",
+    "subServices": [
+      {
+        "name": "Tickets & Transportation",
+        "icon": "Ticket",
+        "items": [
+          { "name": "Flight Booking", "description": "Domestic and international flight tickets." },
+          { "name": "Train Booking", "description": "IRCTC train ticket reservations." },
+          { "name": "Bus Booking", "description": "Intercity bus reservations." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "education",
+    "title": "Education Services",
+    "icon": "GraduationCap",
+    "subServices": [
+      {
+        "name": "Student Support",
+        "icon": "BookOpen",
+        "items": [
+          { "name": "Scholarship Applications", "description": "Oasis, Aikyashree, and National Scholarships." },
+          { "name": "Exam Form Fill-up", "description": "Govt job applications and competitive exams." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "utility",
+    "title": "Utility Services",
+    "icon": "Zap",
+    "subServices": [
+      {
+        "name": "Bills & Recharges",
+        "icon": "Smartphone",
+        "items": [
+          { "name": "Electricity & Water Bills", "description": "Online payment with instant receipts." },
+          { "name": "Recharges", "description": "Mobile, DTH, and Fastag recharges." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "transport",
+    "title": "Transport Services",
+    "icon": "Car",
+    "subServices": [
+      {
+        "name": "Driving & RTO",
+        "icon": "FileText",
+        "items": [
+          { "name": "Driving License", "description": "Learner license, fresh DL, and renewals." },
+          { "name": "Vehicle Services", "description": "RC transfer, fitness, and pollution certificates." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "business",
+    "title": "Business Services",
+    "icon": "Briefcase",
+    "subServices": [
+      {
+        "name": "Registrations",
+        "icon": "Building2",
+        "items": [
+          { "name": "GST & MSME", "description": "New registration and compliance." },
+          { "name": "Trade License", "description": "Municipal and panchayat trade licenses." },
+          { "name": "Income Tax Return (ITR)", "description": "Expert assistance for ITR filing." }
+        ]
+      }
+    ]
+  }
+]

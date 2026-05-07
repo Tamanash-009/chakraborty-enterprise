@@ -1,9 +1,16 @@
 import { LucideIcon } from 'lucide-react';
 
+export interface ServiceItem {
+  name: string;
+  description: string;
+  badge?: string;
+}
+
 export interface SubService {
   name: string;
   icon?: LucideIcon;
   description?: string;
+  items?: ServiceItem[];
   requiredDocuments?: string[];
   estimatedFee?: string;
   processingTime?: string;

@@ -7,7 +7,7 @@ import {
   Search, X, CheckCircle2, ChevronRight, Phone, MessageSquare, 
   Calendar, Clock, User, Check, ChevronDown, Info, MapPin, 
   AlertCircle, ShieldCheck, ArrowRight, FileText, IndianRupee, HelpCircle,
-  Users, Star, Send, Activity, Fingerprint, Smartphone
+  Users, Star, Send, Activity, Fingerprint, Smartphone, Filter
 } from 'lucide-react';
 import { ServicesSkeleton } from '../components/Skeletons';
 import DatePicker from '../components/DatePicker';
@@ -84,7 +84,11 @@ export default function Services() {
     { q: "What documents are needed for Aadhaar update?", a: "Generally, you need an original Proof of Identity (Aadhaar Card) and Proof of Address (Voter ID, Bank Passbook, or Electricity Bill). Mobile number linking requires a physical visit." },
     { q: "How long does a PAN card application take?", a: "New PAN applications usually take 7-10 working days for the digital e-PAN and 15-20 days for the physical card to arrive by post." },
     { q: "Can I pay electricity bills for any district?", a: "Yes, we can process WBSEDCL electricity bill payments for any consumer ID across West Bengal and provide official receipts." },
-    { q: "Do you provide doorstep services?", a: "Yes, for senior citizens and urgent cases in the Chhoto Jagulia area, we provide document collection and delivery services." }
+    { q: "Do you provide doorstep services?", a: "Yes, for senior citizens and urgent cases in the Chhoto Jagulia area, we provide document collection and delivery services." },
+    { q: "Are the services officially recognized?", a: "Yes, we are an authorized CSC (Common Service Centre) verified operator, fully authorized to process government documentation." },
+    { q: "How can I check my Ayushman Bharat eligibility?", a: "You can visit our center with your Aadhaar Card and Ration Card, and we will instantly verify your eligibility and apply for the health card." },
+    { q: "Do you assist with MSME or Trade Licenses?", a: "Absolutely. We provide end-to-end assistance for GST registration, MSME (Udyam) certificates, and local Panchayat Trade Licenses for businesses." },
+    { q: "Can I book Tatkal train tickets here?", a: "Yes, we offer IRCTC train ticket booking services, including Tatkal bookings, subject to availability at the time of booking." }
   ];
 
   const filteredCategories = useMemo(() => {
@@ -494,22 +498,26 @@ export default function Services() {
           </div>
         </section>
 
-        <div className="flex flex-wrap gap-2 mt-20 no-scrollbar overflow-x-auto pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
-          <button 
-            onClick={() => { setSearchQuery(''); setExpandedCategory(null); setHighlightedCategory(null); }}
-            className={`px-5 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap shadow-sm hover:shadow-md ${!searchQuery && !expandedCategory ? 'bg-primary text-surface shadow-cyan-500/20' : 'bg-surface text-text-muted border border-border hover:border-primary'}`}
-          >
-            All Services
-          </button>
-          {SERVICE_CATEGORIES.map(cat => (
-             <button 
-              key={cat.id}
-              onClick={() => scrollToCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap shadow-sm hover:shadow-md ${expandedCategory === cat.id ? 'bg-primary text-surface shadow-cyan-500/20' : 'bg-surface text-text-muted border border-border hover:border-primary'}`}
+        <div className="mt-20">
+          <h3 className="text-sm font-black text-text-main uppercase tracking-widest mb-4 flex items-center gap-2 italic"><Filter size={14} className="text-primary"/> Filter by Category</h3>
+          <div className="flex flex-wrap gap-2 no-scrollbar overflow-x-auto pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+            <button 
+              onClick={() => { setSearchQuery(''); setExpandedCategory(null); setHighlightedCategory(null); }}
+              className={`px-5 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap shadow-sm hover:shadow-md ${!searchQuery && !expandedCategory ? 'bg-primary text-surface shadow-cyan-500/20' : 'bg-surface text-text-muted border border-border hover:border-primary'}`}
             >
-              {cat.title}
+              All Services
             </button>
-          ))}
+            {SERVICE_CATEGORIES.map(cat => (
+               <button 
+                key={cat.id}
+                onClick={() => scrollToCategory(cat.id)}
+                className={`px-5 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap shadow-sm flex items-center gap-2 hover:shadow-md ${expandedCategory === cat.id ? 'bg-primary text-surface shadow-cyan-500/20 ring-2 ring-primary/30 ring-offset-2 ring-offset-background' : 'bg-surface text-text-muted border border-border hover:border-primary hover:text-text-main'}`}
+              >
+                <cat.icon size={12} className={expandedCategory === cat.id ? 'text-surface' : 'text-primary/70'} />
+                {cat.title}
+              </button>
+            ))}
+          </div>
         </div>
       </header>
 
@@ -568,11 +576,30 @@ export default function Services() {
                         </button>
                       </div>
                       {sub.description && (
-                        <p className="text-xs text-text-muted mb-6 line-clamp-2 italic leading-relaxed">{sub.description}</p>
+                        <p className="text-xs text-text-muted mb-4 italic leading-relaxed">{sub.description}</p>
                       )}
+                      
+                      {sub.items && sub.items.length > 0 && (
+                        <div className="mt-2 mb-6 space-y-2">
+                          {sub.items.map((item, i) => (
+                            <div key={i} className="p-3 bg-surface/50 dark:bg-background/60 rounded-xl border border-border/50 hover:border-primary/20 transition-colors">
+                              <div className="flex justify-between items-start gap-2">
+                                <h4 className="text-xs font-bold text-text-main">{item.name}</h4>
+                                {item.badge && (
+                                  <span className="text-[9px] font-bold px-2 py-0.5 bg-primary/10 text-primary rounded-full shrink-0">
+                                    {item.badge}
+                                  </span>
+                                )}
+                              </div>
+                              <p className="text-[10px] text-text-muted mt-1 leading-relaxed">{item.description}</p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
                       <button 
                         onClick={() => openBookingModal(sub.name, sub.description || '')}
-                        className="flex items-center justify-center gap-2 w-full py-3 bg-surface dark:bg-background/80 text-cyan-800 dark:text-cyan-400 border border-border dark:border-border/30 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm active:scale-95"
+                        className="flex items-center justify-center gap-2 w-full py-3 bg-surface dark:bg-background/80 text-cyan-800 dark:text-cyan-400 border border-border dark:border-border/30 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm active:scale-95 mt-auto"
                       >
                         <Calendar size={12} /> Book Now
                       </button>
@@ -1141,7 +1168,7 @@ export default function Services() {
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4">
               <div className="space-y-1">
-                <p className="text-2xl font-black text-primary italic">1000+</p>
+                <p className="text-2xl font-black text-primary italic">50k+</p>
                 <p className="text-[10px] font-bold text-text-muted uppercase tracking-widest italic">Happy Clients</p>
               </div>
               <div className="space-y-1">
