@@ -30,7 +30,11 @@ import {
   Landmark,
   MapPin,
   Home,
-  Coins
+  Coins,
+  Sprout,
+  Scale,
+  Train,
+  Zap
 } from 'lucide-react';
 import { ServiceCategory } from './types';
 
@@ -63,258 +67,195 @@ export const CONTACT_INFO = {
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: 'government',
-    title: 'Government ID Services',
+    title: 'Government & Citizen Services',
     icon: FileCheck,
     subServices: [
-      { 
-        name: 'Aadhaar (New & Update)', 
+      {
+        name: 'Aadhaar Services',
         icon: Fingerprint,
-        description: 'New Aadhaar enrollment for children (5+ years), mobile number linking, and correction of Name, Address, or DOB.',
-        requiredDocuments: ['Proof of Identity (Voter ID/PAN/Passport)', 'Proof of Address', 'Birth Certificate (for children)'],
-        estimatedFee: '₹50 (Print) / ₹100 (Update) + Service Charge',
-        processingTime: '7 - 15 working days',
-        eligibility: 'All Indian Residents and Children (5+ years)',
-        faq: [
-          { question: 'What documents are needed for child Aadhaar?', answer: 'Birth certificate and one parent Aadhaar card are primarily required.' },
-          { question: 'Can I link my mobile number here?', answer: 'Yes, we provide full assistance for mobile number linking and biometric update appointments.' }
-        ]
+        description: 'Includes Aadhaar Enrollment, Aadhaar Update, Aadhaar Address Change, Aadhaar Mobile Number Update, Aadhaar Biometric Update, Aadhaar PVC Print, Aadhaar eKYC, Aadhaar Authentication, and Aadhaar UCL Services.',
       },
-      { 
-        name: 'PAN Card Application', 
+      {
+        name: 'PAN & Identity Services',
         icon: CreditCard,
-        description: 'Apply for a new Individual/Business PAN card or update existing data errors.',
-        requiredDocuments: ['Aadhaar Card', '2 Recent Photos', 'Digital Signature/Thumb'],
-        estimatedFee: '₹107 (Govt Fee) + Processing Charge',
-        processingTime: '48 Hours (e-PAN) / 10 Days (Physical)',
-        eligibility: 'Individuals, Minors, and Businesses',
+        description: 'Includes PAN Card Apply, PAN Correction, Instant ePAN, Voter ID Services, Senior Citizen Card, E-Shram Card, Labour Card, Ration Card Services, Birth Certificate, and Death Certificate.',
       },
       {
-        name: 'Voter Card Assistance',
-        icon: Vote,
-        description: 'New Voter ID registration, correction, or migration to Chhoto Jagulia area.',
-        requiredDocuments: ['Age Proof', 'Address Proof', 'Family Voter ID Reference'],
-        estimatedFee: 'Nominal Service Charge',
-        processingTime: '30 - 60 days (verified by ECI)',
+        name: 'Ayushman Bharat & Health',
+        icon: HeartPulse,
+        description: 'Includes Ayushman Bharat Card, ABHA Health Card, Swasthya Sathi, Health Scheme Registration, and Telemedicine Support.',
       },
       {
-        name: 'All Ration Card Services',
-        icon: Utensils,
-        description: 'New application, category change, member addition/deletion, and Aadhaar linking for all Ration Cards.',
-        requiredDocuments: ['Existing Ration Card (if any)', 'Family Members Aadhaar Cards', 'Income Proof'],
-        estimatedFee: 'Starts at ₹50',
-        processingTime: '15 - 30 days',
+        name: 'Pension & Social Welfare',
+        icon: ShieldCheck,
+        description: 'Includes PM Shram Yogi Maandhan, National Pension Scheme (NPS), Widow Pension, Joy Johar Pension, Taposili Bandhu, Manabik Pension, and Senior Citizen Pension Services.',
+      },
+      {
+        name: 'Agriculture & Farmer Services',
+        icon: Sprout,
+        description: 'Includes PM Kisan Yojana, Krishak Bandhu, PM Kisan Credit Card, PM Fasal Bima Yojana, and Agriculture Registration Support.',
+      },
+      {
+        name: 'Women & Student Schemes',
+        icon: GraduationCap,
+        description: 'Includes Lakshmir Bhandar, Kanyashree, Rupashree, Sabooj Sathi, Aikyashree Scholarship, SVMCM Scholarship, Student Credit Card, Student Internship Programme, Tuition Fee Payment, and School Fee Payment.',
+      },
+      {
+        name: 'Employment & Skill Development',
+        icon: Briefcase,
+        description: 'Includes Banglar Yuba Sathi, Utkarsh Bangla, Karmashree, Bhabishyat Credit Card, CSC Academy Courses, and Skill Development Registration.',
+      },
+      {
+        name: 'Legal & Administrative',
+        icon: Scale,
+        description: 'Includes E-Courts Services, Tele-Legal Consultation, E-District Services, Election Services, Passport Services, and FSSAI Registration.',
+      }
+    ]
+  },
+  {
+    id: 'transport',
+    title: 'Transport & Driving Services',
+    icon: Car,
+    subServices: [
+      {
+        name: 'Driving License Services',
+        icon: Car,
+        description: 'Includes Learner License, Driving License Apply, Driving License Renewal, International Driving Permit, and Duplicate License.',
+      },
+      {
+        name: 'Vehicle & RTO Services',
+        icon: FileText,
+        description: 'Includes Vehicle RC Services, Vehicle Ownership Transfer, Fitness Certificate, Pollution Certificate, E-Vahan Services, and Sarathi Services.',
       }
     ]
   },
   {
     id: 'banking',
-    title: 'Banking & AEPS',
+    title: 'Banking & Financial Services',
     icon: IndianRupee,
     subServices: [
-      { 
-        name: 'Instant Account Opening', 
+      {
+        name: 'Bank Accounts',
         icon: Landmark,
-        description: 'Seamless opening of Savings & Current accounts for various banks with instant ATM/Debit kits.',
-        requiredDocuments: ['Aadhaar Card', 'PAN Card', 'Linked Mobile Number'],
-        estimatedFee: 'Initial Deposit + Kit Charges',
-        processingTime: 'Same Day activation',
-        eligibility: 'Individuals 18+',
+        description: 'Includes Savings Account, Current Account, Salary Account, FD & RD, and NRI Accounts.',
       },
-      { 
-        name: 'Cash Withdrawal (AEPS)', 
+      {
+        name: 'Loan Services',
+        icon: Coins,
+        description: 'Includes Personal Loan, Home Loan, Education Loan, Business Loan, MSME Loan, Gold Loan, Vehicle Loan, Agriculture Loan, and Loan Against Property.',
+      },
+      {
+        name: 'Credit Card Services',
+        icon: CreditCard,
+        description: 'Includes Cashback Credit Cards, Travel Credit Cards, Fuel Credit Cards, Rewards Credit Cards, and Premium Cards.',
+      },
+      {
+        name: 'Financial Services',
         icon: Wallet,
-        description: 'Micro-ATM service for instant cash withdrawal from any bank using Aadhaar biometric.',
-        requiredDocuments: ['Aadhaar Number', 'Bank Name'],
-        estimatedFee: 'Nil for standard amounts (limits apply)',
-        processingTime: 'Instant',
-        eligibility: 'Aadhaar-seeded bank account holders',
-      },
-      {
-        name: 'Balance Enquiry & Mini Statement',
-        icon: History,
-        description: 'Check your current bank balance or print last 10 transactions without visiting bank.',
-        requiredDocuments: ['Aadhaar Number'],
-        estimatedFee: 'Service Charge ₹5 per print',
-        processingTime: 'Instant',
-      },
-      {
-        name: 'DMT (Domestic Money Transfer)',
-        icon: SendHorizontal,
-        description: 'Send money to any bank account in India instantly via IMPS/NEFT.',
-        requiredDocuments: ['Receiver Bank Name', 'Account Number', 'IFSC Code'],
-        estimatedFee: '1% of amount + GST',
-        processingTime: 'Instant Credit',
+        description: 'Includes AEPS, DigiPay, FASTag, CIBIL Support, Banking Assistance, Insurance Premium Payment, Pension Services, and Bharat BillPay.',
       }
     ]
   },
   {
     id: 'insurance',
-    title: 'Insurance Solutions',
-    icon: HeartPulse,
+    title: 'Insurance Services',
+    icon: Shield,
     subServices: [
-      { 
-        name: 'New LIC Policy & Premium', 
-        icon: Shield,
-        description: 'New LIC policy issuance and instant premium payment with official receipts.',
-        requiredDocuments: ['Aadhaar Card', 'PAN Card', 'Photo', 'Bank Details'],
-        estimatedFee: 'As per Plan Selection',
-        processingTime: 'Instant Receipt / Policy in 24h',
-      },
-      { 
-        name: 'Bike & Car Insurance', 
-        icon: Car,
-        description: 'Instant 1st party or 3rd party insurance for all types of two-wheelers and four-wheelers.',
-        requiredDocuments: ['RC Book Copy', 'Previous Insurance (if any)'],
-        estimatedFee: 'Competitive Premium Rates',
-        processingTime: '15 Minutes',
-      },
-      { 
-        name: 'Life & General Insurance', 
-        icon: Activity,
-        description: 'Wide range of life, personal accident, and general insurance schemes available.',
-        requiredDocuments: ['Personal ID', 'Address Proof'],
-        estimatedFee: 'Plan Dependent',
-        processingTime: 'Same Day',
-      },
-      { 
-        name: 'Health & Mediclaim', 
-        icon: HeartPulse,
-        description: 'Family floater and individual health insurance policy issuance (Star, Apollo, HDFC).',
-        requiredDocuments: ['Age Proof', 'Member Details'],
-        estimatedFee: 'As per Policy Premium',
-        processingTime: 'Same Day',
-      },
-      { 
-        name: 'Ayushman Bharat Card', 
-        icon: FileText,
-        description: 'Digital creation of ABHA Health IDs and checking eligibility for PM-JAY cards.',
-        requiredDocuments: ['Aadhaar Card', 'Ration Card'],
-        estimatedFee: 'Nominal Service Charge',
-        processingTime: 'Instant',
-      }
-    ]
-  },
-  {
-    id: 'corrections',
-    title: 'Corrections & Updates',
-    icon: Eraser,
-    subServices: [
-      { 
-        name: 'Govt Document Correction', 
-        icon: Eraser,
-        description: 'Comprehensive help for correcting errors in Caste, Income, and Residential certificates.',
-        requiredDocuments: ['Original Document', 'Correct Supporting Evidence'],
-        estimatedFee: 'Depends on document type',
-        processingTime: '10 - 20 days',
-      },
-      { 
-        name: 'Land Record Updates', 
-        icon: MapPin,
-        description: 'Checking Porcha/Khatian online and applying for corrections in land records.',
-        requiredDocuments: ['Dag/Khatian Number', 'Legal ID of Owner'],
-        estimatedFee: 'Processing Fee ₹100',
-        processingTime: 'Varies by department',
-      }
-    ]
-  },
-  {
-    id: 'education',
-    title: 'Education & Forms',
-    icon: GraduationCap,
-    subServices: [
-      { 
-        name: 'Government Job Applications', 
-        icon: Briefcase,
-        description: 'Complete assistance for WB Police, SSC, Railways, and Central Job form fill-ups.',
-        requiredDocuments: ['Education Marksheets', 'Category Certificate (if any)', 'Digital Photo & Sign'],
-        estimatedFee: '₹50 - ₹100 per form',
-        processingTime: 'While you wait',
-        eligibility: 'As per specific job notification',
+      {
+        name: 'Life Insurance',
+        icon: ShieldCheck,
+        description: 'Includes Term Insurance, Whole Life Insurance, Child Plans, ULIP Plans, and Retirement Plans.',
       },
       {
-        name: 'Scholarship (Oasis / Aikyashree)',
-        icon: BookOpen,
-        description: 'Fresh application and renewal for SC/ST/OBC/Minority student scholarships.',
-        requiredDocuments: ['Caste Certificate', 'Bank Passbook', 'Income Certificate', 'Academic Records'],
-        estimatedFee: '₹30 - ₹50',
-        processingTime: 'Verification by Institute follows',
-      }
-    ]
-  },
-  {
-    id: 'loans',
-    title: 'Loans & EMI Services',
-    icon: Coins,
-    subServices: [
-      { 
-        name: 'Personal Loan Assistance', 
-        icon: Wallet,
-        description: 'Instant personal loans for salaried or self-employed (SBI, HDFC, ICICI, Axis).',
-        requiredDocuments: ['PAN Card', 'Aadhaar Card', 'Salary Slip/ITR', '6 Months Bank Statement'],
-        estimatedFee: 'Consultation + Processing Fee',
-        processingTime: '2 - 7 Days Approval',
+        name: 'Health Insurance',
+        icon: HeartPulse,
+        description: 'Includes Individual Health Insurance, Family Floater, Critical Illness, Senior Citizen Insurance, and Accident Insurance.',
       },
-      { 
-        name: 'Business & MSME Loan', 
-        icon: Briefcase,
-        description: 'Project loans and working capital solutions for small businesses and shops.',
-        requiredDocuments: ['Trade License', 'MSME Certificate', 'GST Returns', 'Bank Statement'],
-        estimatedFee: 'Plan Based',
-        processingTime: '7 - 15 working days',
-      },
-      { 
-        name: 'Gold Loan (Instant)', 
-        icon: Coins,
-        description: 'Easy gold loan assistance with low interest rates (Muthoot Finance, Manappuram, SBI).',
-        requiredDocuments: ['Aadhaar Card', 'Gold Ornaments'],
-        estimatedFee: 'Interest as per Bank',
-        processingTime: '30 Minutes',
-      },
-      { 
-        name: 'Home & Property Loan', 
-        icon: Home,
-        description: 'New home purchase loans or loan against property (LAP) from leading banks.',
-        requiredDocuments: ['Deed/Porcha Copies', 'Income Proof', 'KYC Documents'],
-        estimatedFee: 'Appraisal Based',
-        processingTime: '15 - 30 days',
-      },
-      { 
-        name: 'Vehicle Loan (Bike/Car)', 
+      {
+        name: 'Motor Insurance',
         icon: Car,
-        description: 'Fast track financing for new/used two-wheelers and cars (HDFC, Shriram, TVS).',
-        requiredDocuments: ['KYC', 'Proforma Invoice', 'Income Proof'],
-        estimatedFee: 'As per Down Payment',
-        processingTime: '24 - 48 Hours',
+        description: 'Includes Bike Insurance, Car Insurance, and Commercial Vehicle Insurance.',
+      },
+      {
+        name: 'Travel Insurance',
+        icon: Plane,
+        description: 'Includes Domestic Travel Insurance, International Travel Insurance, and Student Travel Insurance.',
+      },
+      {
+        name: 'Business & Property Insurance',
+        icon: Building2,
+        description: 'Includes Fire Insurance, Marine Insurance, Crop Insurance, Liability Insurance, Home Insurance, and Business Insurance.',
       }
     ]
   },
   {
-    id: 'online_works',
-    title: 'All Online Works',
-    icon: Monitor,
+    id: 'travel',
+    title: 'Travel & Ticket Booking',
+    icon: Plane,
     subServices: [
-      { 
-        name: 'Digital Form Fill-ups', 
-        icon: FileText,
-        description: 'If it\'s online, we can do it. Any website application, survey, or portal work.',
-        estimatedFee: 'Starts at ₹20',
-        processingTime: 'Instant',
-      },
-      { 
-        name: 'PF & EPF Services', 
-        icon: Building2,
-        description: 'PF Withdrawal, Kyc Update, and Balance checking for employees.',
-        requiredDocuments: ['UAN Number', 'Aadhaar Card'],
-        estimatedFee: '₹100 - ₹500 depending on task',
-        processingTime: '7 - 15 days for withdrawal',
-      },
-      { 
-        name: 'PASSPORT Application', 
+      {
+        name: 'Flight Booking',
         icon: Plane,
-        description: 'Offline/Online Passport application assistance and appointment booking.',
-        requiredDocuments: ['Aadhaar Card', 'Voter ID', 'Marksheets'],
-        estimatedFee: 'Govt Fee + Consultation',
-        processingTime: 'Appointment scheduling',
+        description: 'Includes Domestic Flights, International Flights, One Way Tickets, Round Trip Booking, and Multi-City Booking.',
+      },
+      {
+        name: 'Train Booking',
+        icon: Train,
+        description: 'Includes Railway Ticket Booking, Tatkal Booking, and PNR Status Support.',
+      },
+      {
+        name: 'Bus Booking',
+        icon: Bus,
+        description: 'Includes AC/Non-AC Bus Booking, Sleeper & Seater Booking, and Intercity Bus Tickets.',
+      },
+      {
+        name: 'Hotel Booking',
+        icon: Home,
+        description: 'Includes Budget Hotels, Luxury Hotels, Homestays, and International Hotel Booking.',
+      },
+      {
+        name: 'Cab & Taxi',
+        icon: Car,
+        description: 'Includes Local Cab Booking, Airport Pickup & Drop, and Intercity Cab Services.',
+      },
+      {
+        name: 'Holiday Packages',
+        icon: MapPin,
+        description: 'Includes Tour Packages, Flight + Hotel Packages, and Group Tours.',
+      }
+    ]
+  },
+  {
+    id: 'digital_utility',
+    title: 'Digital Utility Services',
+    icon: Zap,
+    subServices: [
+      {
+        name: 'Bill Payments & Recharges',
+        icon: Zap,
+        description: 'Includes Electricity Bill Payment, Water Bill Payment, LPG Booking, Mobile Recharge, DTH Recharge, and Broadband Recharge.',
+      },
+      {
+        name: 'Online Forms & Digital Services',
+        icon: Monitor,
+        description: 'Includes Online Form Fillup, Online Exam Registration, Digital Signature Services, and Document Printing & Scanning.',
+      }
+    ]
+  },
+  {
+    id: 'business',
+    title: 'Business & Commerce Services',
+    icon: Building2,
+    subServices: [
+      {
+        name: 'Business Registrations & Licenses',
+        icon: Briefcase,
+        description: 'Includes GST Registration, MSME Registration, Shop License, and Trade License.',
+      },
+      {
+        name: 'Commerce & Support Services',
+        icon: Globe,
+        description: 'Includes Business Documentation, Product Distribution, E-Commerce Services, and Digital Business Support.',
       }
     ]
   }
