@@ -90,22 +90,23 @@
         "items": [
           { "name": "Ayushman Bharat Card", "description": "Registration and KYC for health coverage." },
           { "name": "ABHA Health Card", "description": "Create digital health IDs instantly." },
-          { "name": "Swasthya Sathi", "description": "West Bengal health scheme enrollment." }
+          { "name": "Swasthya Sathi", "description": "West Bengal health scheme enrollment." },
+          { "name": "Tele-Medicine", "description": "Online doctor consultation and e-Sanjeevani support." },
+          { "name": "Online Medicine Order Facility", "description": "Order medicines online with attractive discounts." }
         ]
       },
       {
         "name": "Agriculture & Farmers",
         "icon": "Sprout",
         "items": [
-          { "name": "PM Kisan Yojana", "description": "Registration and KYC for farmer income support." },
-          { "name": "Krishak Bandhu", "description": "West Bengal state scheme for farmers." }
+          { "name": "PM Kisan Yojana", "description": "Registration and KYC for farmer income support." }
         ]
       },
       {
         "name": "Welfare Schemes & Cards",
         "icon": "FileSearch",
         "items": [
-          { "name": "Lakshmir Bhandar", "description": "Application and status check assistance." },
+          { "name": "Annapurna Bhandar", "description": "Application and status check assistance." },
           { "name": "Kanyashree & Rupashree", "description": "Assistance for girl child and marriage schemes." }
         ]
       }

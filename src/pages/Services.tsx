@@ -303,7 +303,7 @@ export default function Services() {
       <SEO 
         title="Services" 
         description="Comprehensive Digital Services for citizens across West Bengal. Aadhaar, PAN, Banking, Insurance, Travel, Loans, and Online Government Schemes. Fast and secure processing."
-        keywords="CSC services, Aadhaar services, PAN card services, Ayushman Bharat, ABHA card, PM Kisan, Lakshmir Bhandar, West Bengal Government Schemes, Travel booking, Insurance services, Loan services, Driving license services, Online government services, Banking assistance"
+        keywords="CSC services, Aadhaar services, PAN card services, Ayushman Bharat, ABHA card, PM Kisan, Annapurna Bhandar, West Bengal Government Schemes, Travel booking, Insurance services, Loan services, Driving license services, Online government services, Banking assistance"
       />
       <motion.div 
         variants={containerVariants}
