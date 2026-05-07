@@ -7,7 +7,7 @@ import {
   Search, X, CheckCircle2, ChevronRight, Phone, MessageSquare, 
   Calendar, Clock, User, Check, ChevronDown, Info, MapPin, 
   AlertCircle, ShieldCheck, ArrowRight, FileText, IndianRupee, HelpCircle,
-  Users, Star, Send, Activity, Fingerprint, Smartphone, Filter
+  Users, Star, Send, Activity, Fingerprint, Smartphone, Filter, LayoutGrid
 } from 'lucide-react';
 import { ServicesSkeleton } from '../components/Skeletons';
 import DatePicker from '../components/DatePicker';
@@ -38,6 +38,26 @@ export default function Services() {
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
   const [selectedSubService, setSelectedSubService] = useState<SubService | null>(null);
   const [highlightedCategory, setHighlightedCategory] = useState<string | null>(null);
+  const [schemeFilter, setSchemeFilter] = useState('');
+  const [faqSearch, setFaqSearch] = useState('');
+  const [selectedItem, setSelectedItem] = useState<any>(null);
+
+  const schemeTypes = useMemo(() => {
+    return Array.from(new Set(SERVICE_CATEGORIES.flatMap(cat => 
+      cat.subServices.flatMap(sub => 
+        (sub.items || []).map(item => item.status).filter(Boolean)
+      )
+    )));
+  }, []);
+
+  const featuredItems = useMemo(() => {
+    return SERVICE_CATEGORIES.flatMap(cat => 
+      cat.subServices.flatMap(sub => 
+        (sub.items || []).filter(item => item.status === 'Popular' || item.status === 'New')
+          .map(item => ({ ...item, category: cat.title }))
+      )
+    ).slice(0, 6);
+  }, []);
 
   // Post-booking feedback
   const [postBookingRating, setPostBookingRating] = useState(0);
@@ -93,15 +113,16 @@ export default function Services() {
 
   const filteredCategories = useMemo(() => {
     const query = searchQuery.toLowerCase().trim();
-    if (!query) return SERVICE_CATEGORIES;
+    const scheme = schemeFilter.toLowerCase().trim();
 
     return SERVICE_CATEGORIES.map(category => {
-      const categoryMatches = category.title.toLowerCase().includes(query);
+      const categoryMatches = !scheme && category.title.toLowerCase().includes(query);
       
-      const matchingSubServices = category.subServices.filter(sub => 
-        sub.name.toLowerCase().includes(query) || 
-        (sub.description && sub.description.toLowerCase().includes(query))
-      );
+      const matchingSubServices = category.subServices.filter(sub => {
+        const matchesQuery = !query || sub.name.toLowerCase().includes(query) || (sub.description && sub.description.toLowerCase().includes(query));
+        const matchesScheme = !scheme || (sub.items || []).some(item => item.status?.toLowerCase() === scheme);
+        return matchesQuery && matchesScheme;
+      });
 
       if (categoryMatches || matchingSubServices.length > 0) {
         return {
@@ -111,7 +132,7 @@ export default function Services() {
       }
       return null;
     }).filter(Boolean) as typeof SERVICE_CATEGORIES;
-  }, [searchQuery]);
+  }, [searchQuery, schemeFilter]);
 
   const filteredFAQs = useMemo(() => {
     const query = searchQuery.toLowerCase().trim();
