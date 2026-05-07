@@ -11,7 +11,7 @@ import { AboutSkeleton } from '../components/Skeletons';
 const FAQS = [
   {
     question: "What is a CSC VLE and is this centre authorized?",
-    answer: "A Village Level Entrepreneur (VLE) is the manager of a Common Service Centre (CSC). Yes, Chakraborty Enterprise is a fully authorized CSC point (ID: 418290XXXXXX) under the Digital India initiative of the Government of India."
+    answer: `A Village Level Entrepreneur (VLE) is the manager of a Common Service Centre (CSC). Yes, Chakraborty Enterprise is a fully authorized CSC point (ID: ${CONTACT_INFO.vleId}) under the Digital India initiative of the Government of India.`
   },
   {
     question: "What documents are required for an Aadhaar / PAN update?",

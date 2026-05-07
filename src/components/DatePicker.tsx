@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { CONTACT_INFO } from '../constants';
 
 interface DatePickerProps {
   value: string;
@@ -157,7 +158,7 @@ export default function DatePicker({ value, onChange, minDate, onClose }: DatePi
             <span className="text-[8px] font-bold text-text-muted uppercase tracking-widest italic">Booked</span>
           </div>
         </div>
-        <div className="text-[8px] font-black text-primary/60 uppercase tracking-tighter italic">VLE: 516324110018</div>
+        <div className="text-[8px] font-black text-primary/60 uppercase tracking-tighter italic">VLE: {CONTACT_INFO.vleId}</div>
       </div>
 
       <div className="mt-6 pt-6 border-t border-border flex justify-end">

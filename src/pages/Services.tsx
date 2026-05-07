@@ -975,6 +975,7 @@ export default function Services() {
                     Service Details
                   </div>
                   <h2 className="text-2xl font-extrabold text-text-main uppercase tracking-tight italic">{selectedItem.name}</h2>
+                  <div className="text-[10px] font-black text-primary/60 uppercase tracking-widest italic mt-1">VLE ID: {CONTACT_INFO.vleId}</div>
                 </div>
                 <button onClick={() => setSelectedItem(null)} className="p-2 text-text-muted hover:bg-background rounded-full transition-colors">
                   <X size={24} />
@@ -1054,7 +1055,7 @@ export default function Services() {
                       {bookingStep === 'form' ? 'Book Appointment' : 
                        bookingStep === 'summary' ? 'Review Details' : 'Confirmed!'}
                     </h2>
-                    <div className="text-[10px] font-black text-primary/60 uppercase tracking-widest italic">VLE ID: 516324110018</div>
+                    <div className="text-[10px] font-black text-primary/60 uppercase tracking-widest italic">VLE ID: {CONTACT_INFO.vleId}</div>
                   </div>
                   <button 
                     onClick={() => setIsBookingOpen(false)} 

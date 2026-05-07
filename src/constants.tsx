@@ -12,7 +12,8 @@ export const CONTACT_INFO = {
   googleReviewLink: 'https://share.google/eBmPQdVgY2mwuooTY',
   timings: 'Monday - Saturday: 9:00 AM to 8:00 PM',
   googleMapLink: 'https://maps.app.goo.gl/BeBSYgJmKbG32eEV9',
-  serviceArea: 'Chhoto Jagulia, Duttapukur, Barasat and surrounding areas of North 24 Parganas. Home service available up to Barasat.'
+  serviceArea: 'Chhoto Jagulia, Duttapukur, Barasat and surrounding areas of North 24 Parganas. Home service available up to Barasat.',
+  vleId: '516324110018'
 };
 
 const getIcon = (iconName: string | undefined): any => {
