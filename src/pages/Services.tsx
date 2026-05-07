@@ -7,7 +7,8 @@ import {
   Search, X, CheckCircle2, ChevronRight, Phone, MessageSquare, 
   Calendar, Clock, User, Check, ChevronDown, Info, MapPin, 
   AlertCircle, ShieldCheck, ArrowRight, FileText, IndianRupee, HelpCircle,
-  Users, Star, Send, Activity, Fingerprint, Smartphone, Filter, LayoutGrid
+  Users, Star, Send, Activity, Fingerprint, Smartphone, Filter, LayoutGrid,
+  Shield, HeartPulse
 } from 'lucide-react';
 import { ServicesSkeleton } from '../components/Skeletons';
 import DatePicker from '../components/DatePicker';
