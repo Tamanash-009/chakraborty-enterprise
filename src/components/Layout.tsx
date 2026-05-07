@@ -9,7 +9,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import { CONTACT_INFO } from '../constants';
 import { usePWA } from '../hooks/usePWA';
 import LoadingScreen from './LoadingScreen';
-import WhatsAppButton from './WhatsAppButton';
 import Logo from './Logo';
 
 interface LayoutProps {
@@ -423,8 +422,6 @@ export default function Layout({ children }: LayoutProps) {
           </button>
         )}
       </div>
-
-      <WhatsAppButton />
     </div>
   );
 }

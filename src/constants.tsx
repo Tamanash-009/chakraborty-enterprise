@@ -4,7 +4,7 @@ import servicesData from './data/services.json';
 
 export const CONTACT_INFO = {
   phone: '+919932454652',
-  whatsapp: '919932454652',
+  whatsapp: '919830861042',
   email: 'tamanash.cr7@gmail.com',
   address: 'Chhoto Jagulia, North 24 Parganas, WB 743294',
   fullAddress: 'Chhoto Jagulia (Near Hospital), Duttapukur, North 24 Parganas, West Bengal 743294',

@@ -15,7 +15,13 @@ const FloatingWhatsApp = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-24 right-6 z-[100] flex flex-col items-end sm:bottom-6 sm:right-6">
+    <motion.div 
+      drag
+      dragMomentum={false}
+      dragTransition={{ power: 0.2, timeConstant: 200 }}
+      whileTap={{ cursor: 'grabbing' }}
+      className="fixed bottom-24 right-6 z-[100] flex flex-col items-end sm:bottom-6 sm:right-6 cursor-grab"
+    >
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -60,7 +66,7 @@ const FloatingWhatsApp = () => {
         <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20 group-hover:opacity-40"></span>
         <MessageSquare size={24} />
       </button>
-    </div>
+    </motion.div>
   );
 };
 

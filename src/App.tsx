@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Layout from './components/Layout';
 import PWAInstall from './components/PWAInstall';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
-import MobileBottomNav from './components/MobileBottomNav';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
@@ -62,7 +61,6 @@ export default function App() {
       <ScrollToTop />
       <PWAInstall />
       <FloatingWhatsApp />
-      <MobileBottomNav />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

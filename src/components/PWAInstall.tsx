@@ -17,10 +17,10 @@ export default function PWAInstall() {
       const isDismissed = localStorage.getItem('pwa_install_dismissed');
       
       if (!isDismissed) {
-        // Show popup after a delay
+        // Show popup after a short delay
         setTimeout(() => {
           setShowPopup(true);
-        }, 3000);
+        }, 500);
       }
     };
 
