@@ -1,4 +1,5 @@
-export const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
+// Fallback to the hardcoded ID to guarantee it works in production
+export const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-DHE3N6WNSS';
 
 // Helper to check if gtag is available
 const isGtagAvailable = () => typeof window !== 'undefined' && typeof window.gtag === 'function';
