@@ -7,6 +7,8 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import PWAInstall from './components/PWAInstall';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
+import MobileBottomNav from './components/MobileBottomNav';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
@@ -59,6 +61,8 @@ export default function App() {
       <CopyProtection />
       <ScrollToTop />
       <PWAInstall />
+      <FloatingWhatsApp />
+      <MobileBottomNav />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

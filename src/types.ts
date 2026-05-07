@@ -4,6 +4,11 @@ export interface ServiceItem {
   name: string;
   description: string;
   badge?: string;
+  status?: string;
+  processingTime?: string;
+  documents?: string[];
+  featured?: boolean;
+  schemeType?: string[];
 }
 
 export interface SubService {

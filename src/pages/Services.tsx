@@ -398,6 +398,11 @@ export default function Services() {
                   <option value="passport">Passport</option>
                   <option value="voter">Voter ID</option>
                   <option value="ration">Ration Card</option>
+                  <option value="pmkisan">PM Kisan Status</option>
+                  <option value="bhandar">Annapurna Bhandar</option>
+                  <option value="dl">Driving License</option>
+                  <option value="swasthya">Swasthya Sathi</option>
+                  <option value="pension">Pension Status</option>
                 </select>
                 <button 
                   type="submit"
@@ -518,10 +523,74 @@ export default function Services() {
               </button>
             ))}
           </div>
+
+          {/* Scheme Filters */}
+          <h3 className="text-sm font-black text-text-main uppercase tracking-widest mt-8 mb-4 flex items-center gap-2 italic"><Activity size={14} className="text-primary"/> Government Schemes</h3>
+          <div className="flex flex-wrap gap-2 no-scrollbar overflow-x-auto pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+            <button 
+              onClick={() => setSchemeFilter('')}
+              className={`px-5 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap shadow-sm ${!schemeFilter ? 'bg-primary text-surface shadow-cyan-500/20' : 'bg-surface text-text-muted border border-border hover:border-primary'}`}
+            >
+              All Schemes
+            </button>
+            {schemeTypes.map(scheme => (
+               <button 
+                key={scheme}
+                onClick={() => setSchemeFilter(scheme)}
+                className={`px-5 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap shadow-sm flex items-center gap-2 ${schemeFilter === scheme ? 'bg-primary text-surface shadow-cyan-500/20' : 'bg-surface text-text-muted border border-border hover:border-primary hover:text-text-main'}`}
+              >
+                {scheme}
+              </button>
+            ))}
+          </div>
+
         </div>
       </header>
 
       {/* Removed Duplicate Navigation Chips */}
+
+      
+      {/* Popular Services */}
+      {!searchQuery && !schemeFilter && (
+        <section className="mb-20">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500">
+              <Star size={24} className="fill-amber-500" />
+            </div>
+            <h2 className="text-2xl font-black text-text-main uppercase tracking-tighter italic">Most Popular Services</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredItems.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                onClick={() => setSelectedItem(item)}
+                className="p-6 bg-surface dark:bg-surface/30 border border-border rounded-[2rem] hover:border-primary hover:shadow-2xl hover:shadow-primary/10 transition-all cursor-pointer group"
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                      {item.icon ? <item.icon size={20} /> : <FileText size={20} />}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-text-main group-hover:text-primary transition-colors italic leading-tight">{item.name}</h4>
+                      <p className="text-[9px] text-text-muted uppercase tracking-widest font-black mt-1">{item.category}</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-text-muted italic leading-relaxed mb-4 line-clamp-2">{item.description}</p>
+                <div className="flex items-center gap-2">
+                  <span className="text-[9px] font-black uppercase tracking-widest px-2 py-1 bg-green-500/10 text-green-600 rounded-lg">{item.processingTime || 'Instant'}</span>
+                  {item.status && <span className="text-[9px] font-black uppercase tracking-widest px-2 py-1 bg-primary/10 text-primary rounded-lg">{item.status}</span>}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Primary Services Grid */}
       <div className="space-y-12 mb-20 scroll-mt-32">
@@ -579,23 +648,31 @@ export default function Services() {
                         <p className="text-xs text-text-muted mb-4 italic leading-relaxed">{sub.description}</p>
                       )}
                       
+                      
                       {sub.items && sub.items.length > 0 && (
                         <div className="mt-2 mb-6 space-y-2">
                           {sub.items.map((item, i) => (
-                            <div key={i} className="p-3 bg-surface/50 dark:bg-background/60 rounded-xl border border-border/50 hover:border-primary/20 transition-colors">
+                            <button 
+                              key={i} 
+                              onClick={() => setSelectedItem(item)}
+                              className="w-full text-left p-4 bg-surface/50 dark:bg-background/60 rounded-xl border border-border/50 hover:border-primary/30 transition-all group/nested hover:shadow-md"
+                            >
                               <div className="flex justify-between items-start gap-2">
-                                <h4 className="text-xs font-bold text-text-main">{item.name}</h4>
-                                {item.badge && (
-                                  <span className="text-[9px] font-bold px-2 py-0.5 bg-primary/10 text-primary rounded-full shrink-0">
-                                    {item.badge}
+                                <div>
+                                  <h4 className="text-xs font-bold text-text-main group-hover/nested:text-primary transition-colors">{item.name}</h4>
+                                  <p className="text-[10px] text-text-muted mt-1 leading-relaxed">{item.description}</p>
+                                </div>
+                                {item.status && (
+                                  <span className="text-[9px] font-black px-2 py-1 bg-primary/10 text-primary rounded-lg shrink-0 uppercase tracking-widest">
+                                    {item.status}
                                   </span>
                                 )}
                               </div>
-                              <p className="text-[10px] text-text-muted mt-1 leading-relaxed">{item.description}</p>
-                            </div>
+                            </button>
                           ))}
                         </div>
                       )}
+
 
                       <button 
                         onClick={() => openBookingModal(sub.name, sub.description || '')}
@@ -655,20 +732,63 @@ export default function Services() {
         )}
       </div>
 
+      
+      {/* Why Choose Chakraborty Enterprise */}
+      <section className="mb-20">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+            <ShieldCheck size={24} />
+          </div>
+          <h2 className="text-2xl font-black text-text-main uppercase tracking-tighter italic">Why Choose Us</h2>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {[
+            { title: "Fast Processing", icon: Activity, desc: "Quickest turnaround time for applications." },
+            { title: "Secure Data", icon: Shield, desc: "Your personal details are completely safe." },
+            { title: "Trusted Support", icon: HeartPulse, desc: "Dedicated VLE assistance." },
+            { title: "Multi-Service", icon: LayoutGrid, desc: "All digital services under one roof." },
+            { title: "Affordable", icon: IndianRupee, desc: "Government approved low charges." },
+            { title: "Responsive", icon: MessageSquare, desc: "Active WhatsApp support." }
+          ].map((trust, idx) => (
+            <div key={idx} className="p-6 bg-surface dark:bg-surface/20 border border-border rounded-[2rem] text-center hover:border-primary/30 transition-all">
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <trust.icon size={20} />
+              </div>
+              <h4 className="text-xs font-black text-text-main uppercase tracking-widest mb-2 italic">{trust.title}</h4>
+              <p className="text-[10px] text-text-muted font-bold">{trust.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* FAQ & Help Assistance Area */}
       {(filteredFAQs.length > 0 || !searchQuery) && (
         <section className="mb-32 scroll-mt-32 content-auto" id="faq">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-14 h-14 bg-primary/10 rounded-[1.5rem] flex items-center justify-center text-primary shadow-sm border border-primary/5">
-              <HelpCircle size={28} />
+          
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-primary/10 rounded-[1.5rem] flex items-center justify-center text-primary shadow-sm border border-primary/5">
+                <HelpCircle size={28} />
+              </div>
+              <div>
+                <h2 className="text-2xl font-black text-text-main uppercase tracking-tighter italic leading-none">Help Assistance</h2>
+                <p className="text-[10px] font-black text-text-muted uppercase tracking-[0.2em] mt-1 italic">Quick resolutions for common queries</p>
+              </div>
             </div>
-            <div>
-              <h2 className="text-2xl font-black text-text-main uppercase tracking-tighter italic leading-none">Help Assistance</h2>
-              <p className="text-[10px] font-black text-text-muted uppercase tracking-[0.2em] mt-1 italic">Quick resolutions for common queries</p>
+            <div className="relative w-full md:w-72">
+              <input 
+                type="text" 
+                placeholder="Search FAQs..."
+                value={faqSearch}
+                onChange={(e) => setFaqSearch(e.target.value)}
+                className="w-full bg-background border border-border rounded-xl px-4 py-3 text-sm font-bold focus:outline-none focus:border-primary pr-10"
+              />
+              <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted opacity-50" size={16} />
             </div>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {(searchQuery ? filteredFAQs : FAQs).map((faq, i) => (
+            {((searchQuery || faqSearch ? FAQs.filter(f => f.q.toLowerCase().includes((searchQuery||faqSearch).toLowerCase()) || f.a.toLowerCase().includes((searchQuery||faqSearch).toLowerCase())) : FAQs)).map((faq, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
@@ -830,6 +950,80 @@ export default function Services() {
                     <MessageSquare size={22} strokeWidth={2.5} />
                   </a>
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      
+      <AnimatePresence>
+        {selectedItem && (
+          <div className="fixed inset-0 z-[115] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              onClick={() => setSelectedItem(null)}
+              className="absolute inset-0 bg-background/80 backdrop-blur-xl"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative w-full max-w-xl bg-surface rounded-[2.5rem] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col border border-border"
+            >
+              <div className="p-8 pb-4 flex justify-between items-start border-b border-border bg-background/50">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest mb-2 font-black italic">
+                    Service Details
+                  </div>
+                  <h2 className="text-2xl font-extrabold text-text-main uppercase tracking-tight italic">{selectedItem.name}</h2>
+                </div>
+                <button onClick={() => setSelectedItem(null)} className="p-2 text-text-muted hover:bg-background rounded-full transition-colors">
+                  <X size={24} />
+                </button>
+              </div>
+
+              <div className="p-8 overflow-y-auto no-scrollbar space-y-6 bg-surface">
+                <p className="text-text-main/80 leading-relaxed font-medium italic">{selectedItem.description}</p>
+
+                <div className="flex flex-wrap gap-3">
+                  {selectedItem.status && (
+                    <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-xl text-xs font-black uppercase tracking-widest text-primary">
+                      <CheckCircle2 size={14} /> {selectedItem.status}
+                    </div>
+                  )}
+                  {selectedItem.processingTime && (
+                    <div className="flex items-center gap-2 px-4 py-2 bg-amber-500/10 rounded-xl text-xs font-black uppercase tracking-widest text-amber-600">
+                      <Clock size={14} /> {selectedItem.processingTime}
+                    </div>
+                  )}
+                </div>
+
+                {selectedItem.documents && selectedItem.documents.length > 0 && (
+                  <section className="bg-background p-6 rounded-3xl border border-border shadow-inner">
+                    <h3 className="text-xs font-black text-text-main uppercase tracking-widest mb-4 flex items-center gap-2 italic">
+                      <FileText size={16} className="text-primary" /> Required Documents
+                    </h3>
+                    <ul className="space-y-3">
+                      {selectedItem.documents.map((doc, i) => (
+                        <li key={i} className="flex gap-3 text-sm text-text-muted font-bold italic items-start">
+                          <CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" /> 
+                          <span>{doc}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+              </div>
+
+              <div className="p-6 border-t border-border flex gap-4 bg-background/30">
+                <button 
+                  onClick={() => {
+                    openBookingModal(selectedItem.name, selectedItem.description);
+                    setSelectedItem(null);
+                  }}
+                  className="flex-1 py-4 bg-primary text-surface rounded-2xl font-black uppercase tracking-widest text-xs shadow-xl shadow-cyan-500/20 active:scale-[0.98] transition-all italic flex justify-center items-center gap-2"
+                >
+                  <Calendar size={16} /> Book Service
+                </button>
               </div>
             </motion.div>
           </div>

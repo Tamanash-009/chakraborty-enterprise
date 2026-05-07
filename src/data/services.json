@@ -12,57 +12,178 @@
           {
             "name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
             "description": "Pension support for eligible senior citizens.",
-            "badge": "Govt Welfare"
+            "badge": "Govt Welfare",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Pension"
+            ]
           },
           {
             "name": "National Social Assistance Programme (NSAP)",
             "description": "Umbrella support scheme for pension and welfare benefits.",
-            "badge": "Govt Welfare"
+            "badge": "Govt Welfare",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Pension"
+            ]
           },
           {
             "name": "Atal Pension Yojana (APY)",
             "description": "Pension scheme for unorganised sector workers.",
-            "badge": "Govt Welfare"
+            "badge": "Govt Welfare",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Pension"
+            ]
           },
           {
             "name": "National Pension System (NPS)",
             "description": "Long-term retirement savings and pension system.",
-            "badge": "Retirement"
+            "badge": "Retirement",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Pension"
+            ]
           },
           {
             "name": "Pradhan Mantri Vaya Vandana Yojana (PMVVY)",
             "description": "Senior citizen pension plan with guaranteed returns.",
-            "badge": "Senior Citizens"
+            "badge": "Senior Citizens",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Pension"
+            ]
           },
           {
             "name": "Senior Citizens Savings Scheme (SCSS)",
             "description": "Government-backed savings scheme with regular income benefits.",
-            "badge": "Savings"
+            "badge": "Savings",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Pension"
+            ]
           },
           {
             "name": "Varishtha Pension Bima Yojana (VPBY)",
             "description": "LIC-backed pension scheme for senior citizens.",
-            "badge": "Insurance"
+            "badge": "Insurance",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Pension"
+            ]
           },
           {
             "name": "Employees’ Provident Fund (EPF)",
             "description": "Retirement pension and savings support for salaried employees.",
-            "badge": "Employee"
+            "badge": "Employee",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Pension"
+            ]
           },
           {
             "name": "Employees’ Pension Scheme (EPS)",
             "description": "Pension scheme for eligible EPFO members.",
-            "badge": "Employee"
+            "badge": "Employee",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Pension"
+            ]
           },
           {
             "name": "Immediate & Deferred Annuity Plans",
             "description": "Regular pension income through insurance-backed annuity plans.",
-            "badge": "Annuity"
+            "badge": "Annuity",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Pension"
+            ]
           },
           {
             "name": "Public Provident Fund (PPF)",
             "description": "Long-term savings plans designed for retirement income support.",
-            "badge": "Savings"
+            "badge": "Savings",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Pension"
+            ]
           }
         ]
       },
@@ -70,44 +191,226 @@
         "name": "Aadhaar Services",
         "icon": "Fingerprint",
         "items": [
-          { "name": "Aadhaar Enrollment", "description": "New Aadhaar card registration." },
-          { "name": "Aadhaar Correction", "description": "Name, Address, or DOB updates." },
-          { "name": "Mobile Link & PVC", "description": "Link mobile to Aadhaar or order PVC card." }
+          {
+            "name": "Aadhaar Enrollment",
+            "description": "New Aadhaar card registration.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Aadhaar Correction",
+            "description": "Name, Address, or DOB updates.",
+            "featured": true,
+            "status": "Verification Required",
+            "processingTime": "7-15 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Registered Mobile Number",
+              "Valid Proof of Address/Identity (e.g. Voter ID, Passport)"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Mobile Link & PVC",
+            "description": "Link mobile to Aadhaar or order PVC card.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          }
         ]
       },
       {
         "name": "PAN & Identity Cards",
         "icon": "CreditCard",
         "items": [
-          { "name": "PAN Card Application", "description": "Apply for a new individual or business PAN." },
-          { "name": "Voter ID Services", "description": "Registration, correction, and Aadhaar linking." },
-          { "name": "E-Shram & Labour Cards", "description": "Registration for unorganized sector workers." }
+          {
+            "name": "PAN Card Application",
+            "description": "Apply for a new individual or business PAN.",
+            "featured": true,
+            "status": "Available Online",
+            "processingTime": "Instant e-PAN / 15 Days Physical",
+            "documents": [
+              "Aadhaar Card",
+              "2 Passport Photos",
+              "Mobile Number linked to Aadhaar"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Voter ID Services",
+            "description": "Registration, correction, and Aadhaar linking.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "E-Shram & Labour Cards",
+            "description": "Registration for unorganized sector workers.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Employment"
+            ]
+          }
         ]
       },
       {
         "name": "Ayushman Bharat & Health",
         "icon": "HeartPulse",
         "items": [
-          { "name": "Ayushman Bharat Card", "description": "Registration and KYC for health coverage." },
-          { "name": "ABHA Health Card", "description": "Create digital health IDs instantly." },
-          { "name": "Swasthya Sathi", "description": "West Bengal health scheme enrollment." },
-          { "name": "Tele-Medicine", "description": "Online doctor consultation and e-Sanjeevani support." },
-          { "name": "Online Medicine Order Facility", "description": "Order medicines online with attractive discounts." }
+          {
+            "name": "Ayushman Bharat Card",
+            "description": "Registration and KYC for health coverage.",
+            "featured": true,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Health"
+            ]
+          },
+          {
+            "name": "ABHA Health Card",
+            "description": "Create digital health IDs instantly.",
+            "featured": true,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Health"
+            ]
+          },
+          {
+            "name": "Swasthya Sathi",
+            "description": "West Bengal health scheme enrollment.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Health"
+            ]
+          },
+          {
+            "name": "Tele-Medicine",
+            "description": "Online doctor consultation and e-Sanjeevani support.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Online Medicine Order Facility",
+            "description": "Order medicines online with attractive discounts.",
+            "featured": false,
+            "status": "Available Online",
+            "processingTime": "Instant",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          }
         ]
       },
       {
         "name": "Agriculture & Farmers",
         "icon": "Sprout",
         "items": [
-          { "name": "PM Kisan Yojana", "description": "Registration and KYC for farmer income support." }
+          {
+            "name": "PM Kisan Yojana",
+            "description": "Registration and KYC for farmer income support.",
+            "featured": true,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          }
         ]
       },
       {
         "name": "Welfare Schemes & Cards",
         "icon": "FileSearch",
         "items": [
-          { "name": "Annapurna Bhandar", "description": "Application and status check assistance." },
-          { "name": "Kanyashree & Rupashree", "description": "Assistance for girl child and marriage schemes." }
+          {
+            "name": "Annapurna Bhandar",
+            "description": "Application and status check assistance.",
+            "featured": true,
+            "status": "Office Visit Needed",
+            "processingTime": "Depends on Govt Approval",
+            "documents": [
+              "Aadhaar Card",
+              "Swasthya Sathi Card",
+              "Bank Passbook",
+              "Passport Photo",
+              "Caste Certificate (if applicable)"
+            ],
+            "schemeType": [
+              "Women"
+            ]
+          },
+          {
+            "name": "Kanyashree & Rupashree",
+            "description": "Assistance for girl child and marriage schemes.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Women"
+            ]
+          }
         ]
       }
     ]
@@ -121,25 +424,109 @@
         "name": "Bank Accounts",
         "icon": "Landmark",
         "items": [
-          { "name": "Savings & Current Accounts", "description": "Instant account opening with leading banks." },
-          { "name": "FD & RD Accounts", "description": "Secure fixed and recurring deposits." }
+          {
+            "name": "Savings & Current Accounts",
+            "description": "Instant account opening with leading banks.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "FD & RD Accounts",
+            "description": "Secure fixed and recurring deposits.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          }
         ]
       },
       {
         "name": "Loan Services",
         "icon": "Coins",
         "items": [
-          { "name": "Personal Loan", "description": "Instant loans for salaried/self-employed." },
-          { "name": "Business & MSME Loan", "description": "Working capital and project loans." },
-          { "name": "Home & Vehicle Loan", "description": "Financing for property and vehicles." }
+          {
+            "name": "Personal Loan",
+            "description": "Instant loans for salaried/self-employed.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Business & MSME Loan",
+            "description": "Working capital and project loans.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Home & Vehicle Loan",
+            "description": "Financing for property and vehicles.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          }
         ]
       },
       {
         "name": "AEPS & Micro ATM",
         "icon": "Wallet",
         "items": [
-          { "name": "Cash Withdrawal", "description": "Aadhaar-enabled instant cash withdrawal." },
-          { "name": "Balance Enquiry", "description": "Check bank balance without visiting the branch." }
+          {
+            "name": "Cash Withdrawal",
+            "description": "Aadhaar-enabled instant cash withdrawal.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Balance Enquiry",
+            "description": "Check bank balance without visiting the branch.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          }
         ]
       }
     ]
@@ -153,16 +540,72 @@
         "name": "Life & Health",
         "icon": "HeartPulse",
         "items": [
-          { "name": "Life Insurance", "description": "Term insurance and whole life plans." },
-          { "name": "Health Mediclaim", "description": "Family floater and individual health cover." }
+          {
+            "name": "Life Insurance",
+            "description": "Term insurance and whole life plans.",
+            "featured": true,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Health"
+            ]
+          },
+          {
+            "name": "Health Mediclaim",
+            "description": "Family floater and individual health cover.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Health"
+            ]
+          }
         ]
       },
       {
         "name": "Motor & Asset",
         "icon": "Car",
         "items": [
-          { "name": "Bike & Car Insurance", "description": "Instant 1st party and 3rd party cover." },
-          { "name": "Shop & Business Insurance", "description": "Fire and liability insurance for businesses." }
+          {
+            "name": "Bike & Car Insurance",
+            "description": "Instant 1st party and 3rd party cover.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Health"
+            ]
+          },
+          {
+            "name": "Shop & Business Insurance",
+            "description": "Fire and liability insurance for businesses.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Health"
+            ]
+          }
         ]
       }
     ]
@@ -176,9 +619,45 @@
         "name": "Tickets & Transportation",
         "icon": "Ticket",
         "items": [
-          { "name": "Flight Booking", "description": "Domestic and international flight tickets." },
-          { "name": "Train Booking", "description": "IRCTC train ticket reservations." },
-          { "name": "Bus Booking", "description": "Intercity bus reservations." }
+          {
+            "name": "Flight Booking",
+            "description": "Domestic and international flight tickets.",
+            "featured": true,
+            "status": "Available Online",
+            "processingTime": "Instant",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Train Booking",
+            "description": "IRCTC train ticket reservations.",
+            "featured": true,
+            "status": "Available Online",
+            "processingTime": "Instant",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Bus Booking",
+            "description": "Intercity bus reservations.",
+            "featured": false,
+            "status": "Available Online",
+            "processingTime": "Instant",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          }
         ]
       }
     ]
@@ -192,8 +671,36 @@
         "name": "Student Support",
         "icon": "BookOpen",
         "items": [
-          { "name": "Scholarship Applications", "description": "Oasis, Aikyashree, and National Scholarships." },
-          { "name": "Exam Form Fill-up", "description": "Govt job applications and competitive exams." }
+          {
+            "name": "Scholarship Applications",
+            "description": "Oasis, Aikyashree, and National Scholarships.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Student"
+            ]
+          },
+          {
+            "name": "Exam Form Fill-up",
+            "description": "Govt job applications and competitive exams.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": [
+              "Student"
+            ]
+          }
         ]
       }
     ]
@@ -207,8 +714,32 @@
         "name": "Bills & Recharges",
         "icon": "Smartphone",
         "items": [
-          { "name": "Electricity & Water Bills", "description": "Online payment with instant receipts." },
-          { "name": "Recharges", "description": "Mobile, DTH, and Fastag recharges." }
+          {
+            "name": "Electricity & Water Bills",
+            "description": "Online payment with instant receipts.",
+            "featured": false,
+            "status": "Available Online",
+            "processingTime": "Instant",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Recharges",
+            "description": "Mobile, DTH, and Fastag recharges.",
+            "featured": false,
+            "status": "Available Online",
+            "processingTime": "Instant",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          }
         ]
       }
     ]
@@ -222,8 +753,34 @@
         "name": "Driving & RTO",
         "icon": "FileText",
         "items": [
-          { "name": "Driving License", "description": "Learner license, fresh DL, and renewals." },
-          { "name": "Vehicle Services", "description": "RC transfer, fitness, and pollution certificates." }
+          {
+            "name": "Driving License",
+            "description": "Learner license, fresh DL, and renewals.",
+            "featured": true,
+            "status": "Verification Required",
+            "processingTime": "Depends on RTO",
+            "documents": [
+              "Aadhaar Card",
+              "Age Proof",
+              "Address Proof",
+              "Blood Group Certificate",
+              "Passport Photos"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Vehicle Services",
+            "description": "RC transfer, fitness, and pollution certificates.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          }
         ]
       }
     ]
@@ -237,9 +794,45 @@
         "name": "Registrations",
         "icon": "Building2",
         "items": [
-          { "name": "GST & MSME", "description": "New registration and compliance." },
-          { "name": "Trade License", "description": "Municipal and panchayat trade licenses." },
-          { "name": "Income Tax Return (ITR)", "description": "Expert assistance for ITR filing." }
+          {
+            "name": "GST & MSME",
+            "description": "New registration and compliance.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Trade License",
+            "description": "Municipal and panchayat trade licenses.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          },
+          {
+            "name": "Income Tax Return (ITR)",
+            "description": "Expert assistance for ITR filing.",
+            "featured": false,
+            "status": "Office Visit Needed",
+            "processingTime": "1-3 Days",
+            "documents": [
+              "Aadhaar Card",
+              "Mobile Number",
+              "Passport Photo"
+            ],
+            "schemeType": []
+          }
         ]
       }
     ]
